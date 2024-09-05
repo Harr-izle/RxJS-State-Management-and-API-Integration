@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../interface/product';
 
 
 @Component({
@@ -10,13 +11,20 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./products.component.css'] 
 })
 export class ProductsComponent {
+  products: Product[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private product:ProductService) { }
 
   ngOnInit(){
-    this.apiService.getProducts().subscribe((data) => {
-      console.log(data);
-    })
+    this.product.getProducts().subscribe(
+      (data: Product[]) => 
+       {
+        this.products = data
+       },
+       (error) =>{
+        console.error('Error fetching data:', error);
+       }
+    )
   }
     
 }

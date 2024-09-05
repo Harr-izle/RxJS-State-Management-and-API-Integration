@@ -6,7 +6,7 @@ import { Product } from '../interface/product';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ProductService {
   apiUrl: string = 'https://api.escuelajs.co/api/v1/categories';
 
   constructor(private http: HttpClient) { }
