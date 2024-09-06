@@ -28,6 +28,7 @@ h1{
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
+    
 }
 .name{
     display: flex;
@@ -40,17 +41,21 @@ h1{
     font-size: 1rem;
     font-weight: 600;
     margin-top: 1rem;
+    color: #87635a;
 }
 .btn-add-to-cart{
     width: 9rem;
     height: 2rem;
-    background-color: #CC5500;
+    background-color: #c73b0f;
     border-radius: 2rem;
     color: #FFFFFF;
     font-size: 1rem;
     border: none;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
     box-shadow: rgba(0, 0, 0, 0.5), ;
     transition: background-color 0.3s ease;
+
 }
 .btn-add-to-cart:hover{
     cursor: pointer;
@@ -74,18 +79,18 @@ h1{
     flex-direction: row;
     align-items: center;
     padding: 2rem;
-    gap: 3rem;
+    gap: 5rem;
     height: 2rem;
 }
 .remove p{
     font-size: 1rem;
-    color:#CC5500;
+    color:#c73b0f;
     font-weight: bold;
 }
 .btn-remove-all{
     width: 9rem;
     height: 2rem;
-    background-color: #CC5500;
+    background-color: #c73b0f;
     border-radius: 1rem;
     color: #FFFFFF;
     font-size: 1rem;
@@ -119,7 +124,7 @@ h1{
     height: 2rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: #CC5500;
+    background-color: #c73b0f;
     color: #FFFFFF;
     font-size: 1rem;
     transition: background-color 0.3s ease

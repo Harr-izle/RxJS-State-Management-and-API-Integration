@@ -7,7 +7,7 @@ import { Product } from '../interface/product';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl: string = 'https://api.escuelajs.co/api/v1/categories';
+  apiUrl: string = 'assets/data/data.json';
   
   constructor(private http: HttpClient) { }
 
