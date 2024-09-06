@@ -8,7 +8,7 @@ import { Product } from '../interface/product';
 })
 export class ProductService {
   apiUrl: string = 'https://api.escuelajs.co/api/v1/categories';
-
+  
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {

@@ -1,20 +1,33 @@
+<h1>Products</h1>
+
 <div class="main-container">
-    <h1>Products</h1>
     <div class="product-display">
-        @for(product of products; track product){
-            <div class="image">
-                <img [src]="product.image" alt="">
-            </div>
-            <div class="name">
-                <p>{{product.name}}</p>
-                <button class="btn-add-to-cart"></button>
-    
-            </div>
-
-        }
-      
+      @for(product of products$ | async; track product.id) {
+        <div class="products">
+          <div class="image">
+            <img [src]="product.image" alt="{{ product.name }}">
+          </div>
+          <div class="name">
+            <p>{{ product.name }}</p>
+            <button class="btn-add-to-cart" (click)="addToCart(product)">Add To Cart</button>
+          </div>
+        </div>
+      }
     </div>
-
-
-
-</div>
+  
+   <div class="cart">
+    <div class="remove">
+        <p>CartItems ({{ totalItems$ | async }})</p>
+    <button (click)="removeAllItems()" class="btn-remove-all">Remove All </button>
+    </div>
+    <div class="cart-items">
+      @for(item of cartItems$ | async; track item.id) {
+        <div class="cart-item">
+            <img [src]="item.image" alt="">
+          <p>{{ item.name }}</p>
+          <button class="btn-remove" (click)="removeFromCart(item.id)">Remove</button>
+        </div>
+      }
+    </div>
+   </div>
+  </div>
